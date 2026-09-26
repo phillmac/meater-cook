@@ -1,0 +1,19 @@
+type: conditional
+conditions:
+  - condition: state
+    entity: sensor.back_veranda_meater_pro_probe_cook_state
+    state_not:
+      - "Not Cooking"
+      - "unknown"
+      - "unavailable"
+card:
+  type: custom:meater-cook-card
+  name: MEATER PRO COOK
+  internal_entity: sensor.back_veranda_meater_pro_probe_internal_temperature
+  target_entity: sensor.back_veranda_meater_pro_probe_target_temperature
+  ambient_entity: sensor.back_veranda_meater_pro_probe_ambient_temperature
+  time_remaining_entity: sensor.back_veranda_meater_pro_probe_time_remaining
+  cook_state_entity: sensor.back_veranda_meater_pro_probe_cook_state
+  min: 0
+  max: 300
+  temperature_unit: C
